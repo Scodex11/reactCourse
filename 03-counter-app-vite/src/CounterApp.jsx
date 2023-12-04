@@ -1,7 +1,12 @@
 import { useState } from "react";
 import PropTypes from "prop-types"; //Para los tipos de las PROPS
 
+
+
+
 export const CounterApp = ({ value }) => {
+
+  /*NOTA: CADA VEZ que llames al setCounter -> RENDERIZA DE 0 el CounterApp (en este caso)*/
   const [counter, setCounter] = useState(value); // HOOK para manejar el estado de la variable
 
   const handleAdd = () => {
@@ -10,11 +15,11 @@ export const CounterApp = ({ value }) => {
   };
 
   const handleSubs = () => {
-    setCounter((c) => c - 1); 
+    setCounter((c) => c - 1);
   };
 
   const handleReset = () => {
-    setCounter((c) => c = value); 
+    setCounter((c) => (c = value));
   };
   return (
     <>
