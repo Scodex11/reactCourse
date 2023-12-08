@@ -1,9 +1,6 @@
 import { useState } from "react";
 import PropTypes from "prop-types"; //Para los tipos de las PROPS
 
-
-
-
 export const CounterApp = ({ value }) => {
 
   /*NOTA: CADA VEZ que llames al setCounter -> RENDERIZA DE 0 el CounterApp (en este caso)*/
