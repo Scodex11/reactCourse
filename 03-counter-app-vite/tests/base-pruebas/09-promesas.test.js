@@ -1,5 +1,5 @@
-import { getHeroeByIdAsync } from "../src/base-pruebas/09-promesas";
-import heroes from "../src/data/heroes";
+import { getHeroeByIdAsync } from "../../src/base-pruebas/09-promesas";
+import heroes from "../../src/data/heroes";
 
 describe("Pruebas con promesas", () => {
   

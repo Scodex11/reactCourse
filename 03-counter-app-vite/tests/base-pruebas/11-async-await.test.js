@@ -1,4 +1,4 @@
-import { getImagen } from "../src/base-pruebas/11-async-await";
+import { getImagen } from "../../src/base-pruebas/11-async-await";
 
 
 describe("Pruebas con async-await y Fetch", () => {
