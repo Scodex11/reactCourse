@@ -9,6 +9,7 @@ export const AddCategory = ({ onNewCategory }) => {
         setInputValue(target.value); //Enviamos el valor obtenido por teclado al useState
     }
 
+    
     const onSubmit = (event) => {
         event.preventDefault(); //Evita que refresque 
         
