@@ -1,8 +1,10 @@
+import PropTypes from 'prop-types';
 import { useEffect, useState } from "react";
 import { GifItem } from "./GifItem";
 import { useFetchGifs } from "../hooks/useFetchGifs";
 
-
+//DESCRIPCION del COMPONENTE:
+//Este componente se encarga de colocar en un GRID los GIF item que se obtienen de la API
 
 export const GifGrid = ({category}) => {
 
@@ -13,7 +15,7 @@ export const GifGrid = ({category}) => {
         <>
             <h3>{ category }</h3>
             {
-                isLoading && <p>Loading...</p>
+                isLoading && <p>Cargando...</p>
             }
             
             <div className="card-grid">
@@ -21,7 +23,7 @@ export const GifGrid = ({category}) => {
                     images.map( (img) => (
                         <GifItem 
                             key={img.id}
-                            {...img} // Spread operator to send all the properties of the object
+                            {...img} // Enviamos todas las propiedades al componente
                         />
                     ))
                 }
@@ -30,3 +32,7 @@ export const GifGrid = ({category}) => {
         </>
     )
 };
+
+GifGrid.propTypes = {
+    category: PropTypes.string.isRequired
+}

@@ -5,17 +5,18 @@ import { AddCategory, GifGrid } from './components';
 export const GifExpertApp = () => {
 
     const arrayCategories = ['Dragon Ball']
-
     const [categories, setCategories] = useState(arrayCategories)
- 
-    const onAddCategory = (newCategory) => {
 
+    
+    const onNewCategory = (newCategory) => {
+        
         if (categories.includes(newCategory)){
             alert("¡La categoría ya existe!");
             return;
         } //No se permite agregar categorias repetidas
 
         setCategories([newCategory, ...categories])
+        console.log(categories)
     }
 
 
@@ -24,7 +25,7 @@ export const GifExpertApp = () => {
         <h1>GifExpertApp</h1>
 
         {/* INPUT */}
-        <AddCategory onNewCategory = { onAddCategory } />    
+        <AddCategory onNewCategory = { onNewCategory } />    
     
        
         {

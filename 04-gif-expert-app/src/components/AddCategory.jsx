@@ -1,5 +1,8 @@
 import { useState } from 'react'
+import PropTypes from 'prop-types'
 
+/* DESCRIPCIÓN del COMPONTENTE */
+// Componente que renderiza un formulario para agregar una nueva categoría y se llama desde GiftExpertApp
 
 export const AddCategory = ({ onNewCategory }) => {
   
@@ -15,19 +18,24 @@ export const AddCategory = ({ onNewCategory }) => {
         
         if (inputValue.trim().length <= 1) return;
 
-        onNewCategory(inputValue.trim()); //Enviamos el valor del useState al componente padre (GifExpertApp)
         setInputValue('')
+        onNewCategory(inputValue.trim()); //Enviamos el valor del useState al componente padre (GifExpertApp)
     }
 
     return (
-        <form onSubmit={ onSubmit }>
+        <form onSubmit={ onSubmit } aria-label="form">
             <input  
                 type="text"
                 placeholder="Escribe la categoria del gif..."
-                value={inputValue}
-                onChange={ onInputChange }
+                value={inputValue} //Valor del useState
+                onChange={ onInputChange } //Método que permite cambiar el estado de value dentro de el input
             />
         </form>
   
   )
+}
+
+
+AddCategory.propTypes = {
+    onNewCategory: PropTypes.func.isRequired
 }

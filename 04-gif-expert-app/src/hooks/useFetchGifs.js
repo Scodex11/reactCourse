@@ -4,14 +4,15 @@ import { getGifs } from '../helpers/getGifs';
 
 export const useFetchGifs = (category) => {
   
-    const [images, setImages] = useState([]);
+    
+    const [images, setImages] = useState([]); //Hook para obtener las imagenes en un ARRAY
 
-    const [isLoding, setIsLoding] = useState(true);
+    const [isLoading, setIsLoading] = useState(true); //Hook para saber si esta cargando o no
 
     const getImages = async () => {
         const newImages = await getGifs(category);
         setImages(newImages);
-        setIsLoding(false);
+        setIsLoading(false);
     };
 
 
@@ -21,6 +22,6 @@ export const useFetchGifs = (category) => {
     
     return {
         images,
-        isLoding
+        isLoading
     }
 }
