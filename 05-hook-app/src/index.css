@@ -1,7 +1,27 @@
 body{
   padding: 20px;
+  background-color: #90bd90;
 }
 
 button{
   margin-right: 10px;
+}
+
+.card-container {
+  text-align: center;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-container img {
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  max-width: 200px;
+}
+
+.card-container blockquote {
+  margin-top: 20px;
 }
