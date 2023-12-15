@@ -1,5 +1,5 @@
-import { useFetch } from "../hooks/useFetch";
-import { useCounter } from "../hooks/useCounter";
+import { useFetch, useCounter } from "../hooks";
+import { Card, Loading } from "./"; //Porque estamos en el mismo directorio que index.js
 
 export const MultipleCustomHooks = () => {
   const { counter, increment, decrement } = useCounter(1);
@@ -33,34 +33,22 @@ export const MultipleCustomHooks = () => {
       <a href="https://rickandmortyapi.com/">https://rickandmortyapi.com/</a>
       <hr />
 
-      {isLoading ? (
-        <div className="alert alert-info text-center">Cargando</div>
-      ) : (
-        <>
-          <div className="card-container">
-            <img src={image} alt={name} />
+      {isLoading ? <Loading /> : <Card name={name} status={status} image={image} gender = {gender}/>}
 
-            <blockquote className="blockquote text-center">
-              <p className="mb-3">
-                <b>Character: </b>
-                {name}
-              </p>
-              <p className="mb-3">
-                <b>Gender: </b>
-                {gender}
-              </p>
-              <footer className="blockquote-footer">
-                <b>State:</b> {status}
-              </footer>
-            </blockquote>
-          </div>
-        </>
-      )}
+
       <div className="d-flex align-items-center justify-content-center">
-        <button disabled = {isLoading} className="btn btn-primary mt-2" onClick={() => decrement(1)}>
+        <button
+          disabled={isLoading}
+          className="btn btn-primary mt-2"
+          onClick={() => decrement(1)}
+        >
           Back
         </button>
-        <button disabled = {isLoading} className="btn btn-primary mt-2" onClick={() => increment(1)}>
+        <button
+          disabled={isLoading}
+          className="btn btn-primary mt-2"
+          onClick={() => increment(1)}
+        >
           Next
         </button>
       </div>
