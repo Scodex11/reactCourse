@@ -25,3 +25,7 @@ button{
 .card-container blockquote {
   margin-top: 20px;
 }
+
+a {
+  margin: 2px;
+}
