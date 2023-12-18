@@ -5,7 +5,6 @@ export const TodoApp = () => {
 
   const { todos, handleDelete, handleToggle, handleNewTodo, pendingTodos } = useTodos();
 
-  console.log(pendingTodos);
   return (
     <>
       <h1>
